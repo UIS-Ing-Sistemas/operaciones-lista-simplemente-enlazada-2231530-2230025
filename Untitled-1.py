@@ -19,10 +19,24 @@ class ListaSE:
     
     def agregar_final(self,valor):
         nuevo_nodo=Nodo(valor)
-        nodo=self.cabeza
         
-        while nodo.siguiente!=None:
-            pass
+        if self.cabeza is not None:
+            nodo=self.cabeza
+            while nodo.siguiente!=None:
+                nodo=nodo.siguiente
+            nodo.siguiente=nuevo_nodo
+            return
+        else:
+            self.cabeza=nuevo_nodo
+            
+    def eliminar_ultimo(self):
+        if self.cabeza is not None:
+            nodo=self.cabeza
+            while nodo.siguiente!=None:
+                nodo_anterior=nodo
+                nodo=nodo.siguiente
+            nodo_anterior.siguiente=None
+
         
         
             
